@@ -1,301 +1,621 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的导航页</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>爱护动物 - 共同守护地球家园</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-image: url('http://files.unn.pp.ua/download/pictures%2Fbackground.jpg');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
+        * {
             margin: 0;
-            padding: 20px;
-            color: #333;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
         }
         
-        .header {
-            color: #fff;
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        :root {
+            --primary-color: #4a7c59;
+            --secondary-color: #8fb996;
+            --accent-color: #f8c630;
+            --light-color: #f9f7f3;
+            --dark-color: #333333;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         
-        .search-container {
-            padding: 3rem;
-            width: 100%;
-            max-width: 500px;
-            margin: 0 auto 20px;
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
         }
         
-        .search-box {
-            width: 100%;
-            padding: 15px 18px;
-            font-size: 20px;
-            border: none;
-            border-radius: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            outline: none;
-            background-color: rgba(255, 255, 255, 0.7);
+        header {
+            background: linear-gradient(rgba(74, 124, 89, 0.9), rgba(74, 124, 89, 0.8)), url('https://images.unsplash.com/photo-1518834103326-6d0b8ca0b98d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
         }
         
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 12px;
+            padding: 0 20px;
         }
         
-        .link-item {
-            background-color: rgba(255, 255, 255, 0.3);
-            border-radius: 15px;
-            padding: 12px;
-            transition: all 0.2s;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            height: 60px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
         
-        .link-item:hover {
-            background-color: rgba(255, 255, 255, 0.85);
-            transform: translateY(-2px);
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+        h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
         }
         
-        .link-item a {
-            text-decoration: none;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-            justify-content: center;
-        }
-        
-        .link-icon {
-            width: 24px;
-            height: 24px;
-            margin-bottom: 8px;
-            object-fit: contain;
-        }
-        
-        .link-text {
-            font-size: 14px;
-            text-align: center;
-            word-break: break-word;
-            max-width: 100%;
-        }
-        .foot_marker {
-            position: fixed;
-            bottom: 10px;
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
             left: 0;
-            right: 0;
-            width: 100%;
-            text-align: center;
-            font-size: 12px;
-            color: rgba(255,255,255,0.8);
-            z-index: 999;
-            padding: 10px 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
         }
-
-        .foot_marker a {
-            color: rgba(255,255,255,0.8);
+        
+        h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .tagline {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            padding: 14px 32px;
+            border-radius: 50px;
             text-decoration: none;
-            transition: color 0.3s ease;
-            padding: 5px 10px;
-            border-radius: 15px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            border: none;
+            cursor: pointer;
         }
-
-        .foot_marker a:hover {
-            color: #4388e0;
-        }        
+        
+        .btn:hover {
+            background-color: #e6b425;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-light {
+            background-color: white;
+        }
+        
+        .section-dark {
+            background-color: #f0f5f1;
+        }
+        
+        .intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .animal-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .animal-card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .animal-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .animal-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .animal-card-info {
+            padding: 20px;
+            background-color: white;
+        }
+        
+        .actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .action-item {
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--secondary-color);
+        }
+        
+        .action-item i {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 30px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--accent-color);
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #555;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .quote {
+            font-style: italic;
+            font-size: 1.3rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: rgba(143, 185, 150, 0.2);
+            border-radius: 12px;
+            border-left: 5px solid var(--primary-color);
+        }
+        
+        .github-section {
+            background-color: #24292e;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .github-btn {
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+        
+        .github-btn:hover {
+            background-color: #555;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            header {
+                padding: 80px 20px;
+            }
+        }
+        
+        /* 爱心动画 */
+        .heart {
+            color: #ff6b6b;
+            animation: heartbeat 1.5s infinite;
+            display: inline-block;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            5% { transform: scale(1.2); }
+            10% { transform: scale(1.1); }
+            15% { transform: scale(1.3); }
+            50% { transform: scale(1); }
+            100% { transform: scale(1); }
+        }
     </style>
 </head>
 <body>
-    <div class="search-container">
-        <form action="https://www.google.com/search" method="get" target="_blank">
-            <input class="search-box" type="text" name="q" placeholder="Google 搜索...">
-        </form>
-    </div>
-    
-    <div class="container">
-        <!-- 第一行 -->
-        <div class="link-item">
-            <a href="https://www.google.com" target="_blank">
-                <img class="link-icon" src="https://www.google.com/favicon.ico" alt="Google">
-                <span class="link-text">Google</span>
-            </a>
+    <!-- 头部区域 -->
+    <header>
+        <div class="container">
+            <h1>爱护动物，守护地球家园 <span class="heart">❤</span></h1>
+            <p class="tagline">每一个生命都值得尊重，每一份关怀都能改变世界</p>
+            <a href="#actions" class="btn">立即行动</a>
         </div>
-        <div class="link-item">
-            <a href="https://www.baidu.com" target="_blank">
-                <img class="link-icon" src="https://www.baidu.com/favicon.ico" alt="Baidu">
-                <span class="link-text">Baidu</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://www.youtube.com" target="_blank">
-                <img class="link-icon" src="https://www.youtube.com/favicon.ico" alt="YouTube">
-                <span class="link-text">Youtube</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://mail.google.com/mail/u/0/" target="_blank">
-                <img class="link-icon" src="https://mail.google.com/favicon.ico" alt="Gmail">
-                <span class="link-text">Gmail</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://github.com" target="_blank">
-                <img class="link-icon" src="https://github.com/favicon.ico" alt="GitHub">
-                <span class="link-text">GitHub</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://ip.sb" target="_blank">
-                <img class="link-icon" src="https://ip.sb/favicon.ico" alt="IP SB">
-                <span class="link-text">ip.sb</span>
-            </a>
-        </div>
-        
-        <!-- 第二行 -->
-        <div class="link-item">
-            <a href="https://dash.cloudflare.com" target="_blank">
-                <img class="link-icon" src="https://www.cloudflare.com/favicon.ico" alt="Cloudflare">
-                <span class="link-text">Cloudflare</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://chat.openai.com" target="_blank">
-                <img class="link-icon" src="https://chat.openai.com/favicon.ico" alt="ChatGPT">
-                <span class="link-text">Chatgpt</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://huggingface.co" target="_blank">
-                <img class="link-icon" src="https://huggingface.co/favicon.ico" alt="Hugging Face">
-                <span class="link-text">Huggingface</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://www.itdog.cn" target="_blank">
-                <i class="fas fa-network-wired link-icon"></i>
-                <span class="link-text">ITDOG - 在线ping</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://ping0.cc" target="_blank">
-                <i class="fas fa-database link-icon"></i>
-                <span class="link-text">Ping0</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="#" target="_blank">
-                <i class="fas fa-fingerprint link-icon"></i>
-                <span class="link-text">浏览器指纹</span>
-            </a>
-        </div>
-        
-        <!-- 第三行 -->
-        <div class="link-item">
-            <a href="https://ssss.nyc.mn" target="_blank">
-                <i class="fas fa-tachometer-alt link-icon"></i>
-                <span class="link-text">nezha面板</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://hoppscotch.io" target="_blank">
-                <img class="link-icon" src="https://discord.com/favicon.ico" alt="Discord">
-                <span class="link-text">Api测试</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://who.cx" target="_blank">
-                <i class="fas fa-globe link-icon"></i>
-                <span class="link-text">who.cx</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://www.domcomp.com" target="_blank">
-                <i class="fas fa-tags link-icon"></i>
-                <span class="link-text">域名比价</span>
-            </a>
-        </div>
-        
-        <div class="link-item">
-            <a href="https://www.nodeseek.com" target="_blank">
-                <i class="fas fa-server link-icon"></i>
-                <span class="link-text">NodeSeek</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://linux.do" target="_blank">
-                <i class="fab fa-linux link-icon"></i>
-                <span class="link-text">Linux do</span>
-            </a>
-        </div>
-        
-        <!-- 第四行 -->
-        <div class="link-item">
-            <a href="https://music.gvrander.eu.org" target="_blank">
-                <i class="fab fa-linux link-icon"></i>
-                <span class="link-text">在线音乐</span>
-            </a>           
-        </div>
-        <div class="link-item">
-            <a href="https://www.freereceivesms.com" target="_blank">
-                <i class="fab fa-linux link-icon"></i>
-                <span class="link-text">免费接码</span>
-            </a> 
-        </div>
-        <div class="link-item">
-            <a href="https://sublink.eooce.com" target="_blank">
-                <i class="fab fa-linux link-icon"></i>
-                <span class="link-text">订阅转换</span>
-            </a> 
-        </div>
-        <div class="link-item">
-            <a href="https://ssh.eooce.com" target="_blank">
-                <i class="fab fa-linux link-icon"></i>
-                <span class="link-text">webssh</span>
-            </a> 
-        </div>
-        <div class="link-item">
-            <a href="https://filebox.nnuu.nyc.mn" target="_blank">
-                <i class="fab fa-linux link-icon"></i>
-                <span class="link-text">文件快递柜</span>
-            </a> 
-        </div>
-        <div class="link-item">
-            <a href="https://address.nnuu.nyc.mn" target="_blank">
-                <i class="fab fa-linux link-icon"></i>
-                <span class="link-text">真实地址生成</span>
-            </a> 
-        </div>
+    </header>
 
-        <!-- 版权 -->
-        <div class="foot_marker">
-        <a href="https://github.com/eooce" target="_blank">Powered by eooce</a>
-    </div>
+    <!-- 介绍部分 -->
+    <section class="section-light">
+        <div class="container">
+            <h2>为什么爱护动物至关重要</h2>
+            <p class="intro">
+                动物是地球生态系统的重要组成部分，它们在维持生态平衡、促进生物多样性和丰富人类精神世界方面发挥着不可替代的作用。然而，由于人类活动的影响，许多动物正面临生存威胁。我们有责任保护这些与我们共享地球的生命。
+            </p>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">41%</div>
+                    <p>两栖动物物种面临灭绝风险</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">26%</div>
+                    <p>哺乳动物物种面临灭绝威胁</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1/8</div>
+                    <p>鸟类物种面临灭绝风险</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">每年100万</div>
+                    <p>海洋生物因塑料污染死亡</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 如何爱护动物 -->
+    <section class="section-dark" id="actions">
+        <div class="container">
+            <h2>我们可以做什么</h2>
+            <div class="actions">
+                <div class="action-item">
+                    <i class="fas fa-paw"></i>
+                    <h3>领养代替购买</h3>
+                    <p>考虑从动物收容所领养宠物，给无家可归的动物一个温暖的家，而不是从宠物店购买。</p>
+                </div>
+                <div class="action-item">
+                    <i class="fas fa-leaf"></i>
+                    <h3>保护自然栖息地</h3>
+                    <p>支持自然保护区，减少对野生动物栖息地的破坏，参与植树造林等环保活动。</p>
+                </div>
+                <div class="action-item">
+                    <i class="fas fa-shopping-bag"></i>
+                    <h3>负责任消费</h3>
+                    <p>避免购买野生动物制品，选择不含动物测试的化妆品和清洁产品。</p>
+                </div>
+                <div class="action-item">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>支持保护组织</h3>
+                    <p>捐款或志愿参与动物保护组织的工作，帮助救助受虐待和受伤的野生动物。</p>
+                </div>
+                <div class="action-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>教育和宣传</h3>
+                    <p>向家人和朋友传播爱护动物的理念，特别是教育下一代尊重生命的重要性。</p>
+                </div>
+                <div class="action-item">
+                    <i class="fas fa-utensils"></i>
+                    <h3>减少肉类消费</h3>
+                    <p>适当减少肉类消费，选择可持续的食品来源，减轻畜牧业对环境的压力。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 动物图鉴 -->
+    <section class="section-light">
+        <div class="container">
+            <h2>需要关注的动物朋友</h2>
+            <div class="animal-gallery">
+                <div class="animal-card">
+                    <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="大熊猫">
+                    <div class="animal-card-info">
+                        <h3>大熊猫</h3>
+                        <p>中国的国宝，世界自然基金会的标志动物，濒危物种保护的成功典范。</p>
+                    </div>
+                </div>
+                <div class="animal-card">
+                    <img src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="非洲象">
+                    <div class="animal-card-info">
+                        <h3>非洲象</h3>
+                        <p>陆地最大的哺乳动物，因象牙偷猎和栖息地丧失而面临严重威胁。</p>
+                    </div>
+                </div>
+                <div class="animal-card">
+                    <img src="https://images.unsplash.com/photo-1579168765467-3b235f938439?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="北极熊">
+                    <div class="animal-card-info">
+                        <h3>北极熊</h3>
+                        <p>气候变化的象征，因海冰融化失去栖息地和狩猎场所而濒临灭绝。</p>
+                    </div>
+                </div>
+                <div class="animal-card">
+                    <img src="https://images.unsplash.com/photo-1559253664-ca249d4608c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="海龟">
+                    <div class="animal-card-info">
+                        <h3>海龟</h3>
+                        <p>海洋生态系统的关键物种，受到塑料污染、栖息地破坏和非法贸易的威胁。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 名人名言 -->
+    <section class="section-dark">
+        <div class="container">
+            <div class="quote">
+                <p>"一个国家的伟大和道德进步，可以从其对待动物的方式来判断。"</p>
+                <p style="margin-top: 15px; font-weight: bold;">—— 圣雄甘地</p>
+            </div>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>尊重生命</h3>
+                    <p>所有动物都有感受痛苦和快乐的能力，尊重生命是我们人类的基本道德责任。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe-asia"></i>
+                    </div>
+                    <h3>生态平衡</h3>
+                    <p>每种动物在生态系统中都有其独特作用，保护动物就是维护地球生态平衡。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>人与动物和谐</h3>
+                    <p>人类与动物和谐共处，才能实现可持续发展的美好未来。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GitHub部署说明 -->
+    <section class="github-section">
+        <div class="container">
+            <h2>将此页面部署到GitHub</h2>
+            <p>您可以将此页面轻松部署到GitHub Pages，让更多人看到爱护动物的信息</p>
+            <div class="actions">
+                <div class="action-item" style="background-color: rgba(255,255,255,0.1); color: white; border-left-color: #f8c630;">
+                    <i class="fab fa-github"></i>
+                    <h3>步骤 1: 创建仓库</h3>
+                    <p>在GitHub上创建一个新仓库，命名为 "animal-protection" 或您喜欢的名称。</p>
+                </div>
+                <div class="action-item" style="background-color: rgba(255,255,255,0.1); color: white; border-left-color: #f8c630;">
+                    <i class="fas fa-code"></i>
+                    <h3>步骤 2: 上传文件</h3>
+                    <p>将此HTML文件保存为 "index.html"，上传到您的GitHub仓库中。</p>
+                </div>
+                <div class="action-item" style="background-color: rgba(255,255,255,0.1); color: white; border-left-color: #f8c630;">
+                    <i class="fas fa-cog"></i>
+                    <h3>步骤 3: 启用GitHub Pages</h3>
+                    <p>在仓库设置中，找到GitHub Pages部分，选择主分支作为来源，然后保存。</p>
+                </div>
+            </div>
+            <a href="https://pages.github.com/" class="btn github-btn" target="_blank">查看GitHub Pages指南</a>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>爱护动物倡议</h3>
+                    <p>我们致力于提高公众对动物保护的意识，推动人与动物和谐共处的社会。</p>
+                </div>
+                <div class="footer-links">
+                    <h3>快速链接</h3>
+                    <a href="#actions">行动指南</a>
+                    <a href="https://www.worldwildlife.org/" target="_blank">世界自然基金会</a>
+                    <a href="https://www.ifaw.org/" target="_blank">国际动物福利基金会</a>
+                    <a href="https://www.peta.org/" target="_blank">善待动物组织</a>
+                </div>
+                <div>
+                    <h3>联系我们</h3>
+                    <p>如果您有任何建议或想参与动物保护活动，请通过社交媒体联系我们。</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 爱护动物倡议 | 本页面仅用于教育和宣传目的 | 图片来自 Unsplash</p>
+                <p style="margin-top: 10px;">用<span class="heart">❤</span>为动物发声</p>
+            </div>
+        </div>
+    </footer>
 
     <script>
-        document.querySelectorAll('.link-item:not(.empty)').forEach(item => {
-            const icon = item.querySelector('img.link-icon');
-            if (icon) {
-                icon.onerror = function() {
-                    this.src = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEyIDJDNi40NzcgMiAyIDYuNDc3IDIgMTJzNC40NzcgMTAgMTAgMTAgMTAtNC40NzcgMTAtMTBTMTcuNTIzIDIgMTIgMnptMCAyYzQuNDE4IDAgOCAzLjU4MiA4IDhzLTMuNTgyIDgtOCA4LTgtMy41ODItOC04IDMuNTgyLTggOC04eiIgZmlsbD0iIzMzMyIvPjwvc3ZnPg==';
-                }
+        // 简单的交互效果
+        document.addEventListener('DOMContentLoaded', function() {
+            // 为行动按钮添加平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // 添加卡片悬停效果
+            const cards = document.querySelectorAll('.feature-card, .animal-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.zIndex = '10';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.zIndex = '1';
+                });
+            });
+            
+            // 动态更新年份
+            const yearSpan = document.querySelector('footer .copyright');
+            if(yearSpan) {
+                const currentYear = new Date().getFullYear();
+                yearSpan.innerHTML = yearSpan.innerHTML.replace('2023', currentYear);
             }
+            
+            // 添加爱心点击效果
+            const hearts = document.querySelectorAll('.heart');
+            hearts.forEach(heart => {
+                heart.addEventListener('click', function() {
+                    this.style.animation = 'none';
+                    setTimeout(() => {
+                        this.style.animation = 'heartbeat 1.5s infinite';
+                    }, 10);
+                    
+                    // 创建一个小爱心动画
+                    const flyingHeart = document.createElement('div');
+                    flyingHeart.innerHTML = '❤';
+                    flyingHeart.style.position = 'fixed';
+                    flyingHeart.style.color = '#ff6b6b';
+                    flyingHeart.style.fontSize = '20px';
+                    flyingHeart.style.left = `${event.clientX}px`;
+                    flyingHeart.style.top = `${event.clientY}px`;
+                    flyingHeart.style.zIndex = '1000';
+                    flyingHeart.style.pointerEvents = 'none';
+                    flyingHeart.style.transition = 'all 1s ease-out';
+                    
+                    document.body.appendChild(flyingHeart);
+                    
+                    setTimeout(() => {
+                        flyingHeart.style.transform = 'translateY(-100px) scale(0.5)';
+                        flyingHeart.style.opacity = '0';
+                    }, 10);
+                    
+                    setTimeout(() => {
+                        document.body.removeChild(flyingHeart);
+                    }, 1100);
+                });
+            });
         });
     </script>
 </body>
